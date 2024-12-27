@@ -20,7 +20,6 @@ services:
                 privileged: true
                 restart: always
                 network_mode: host
-                container_name: ei-processing
                 ports: 
                         - 8080
                 depends_on:
@@ -37,7 +36,6 @@ services:
                         - '/dev:/dev'
         web:
                 build: ./web
-                container_name: web
                 privileged: true
                 restart: always
                 network_mode: host
