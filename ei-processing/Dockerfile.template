@@ -57,6 +57,8 @@ RUN pip3 install Flask flask-socketio==4.3.2 flask_cors flask_basicauth Werkzeug
 RUN pip3 install pyaudio
 #RUN pip3 install RPi.Gpio adafruit-blinka 
 
+RUN sudo modprobe bcm2835-v4l2
+
 WORKDIR /usr/src/app
 
 EXPOSE 8080
