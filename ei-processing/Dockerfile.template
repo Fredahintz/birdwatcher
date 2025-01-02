@@ -33,8 +33,8 @@ RUN apt-get update && \
     libavfilter-dev \
     libavcodec-dev \
     python3-six \
+    v4l-utils \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
-
 
 # Compile libvips
 RUN cd /tmp && \
@@ -57,7 +57,7 @@ RUN pip3 install Flask flask-socketio==4.3.2 flask_cors flask_basicauth Werkzeug
 RUN pip3 install pyaudio
 #RUN pip3 install RPi.Gpio adafruit-blinka 
 
-RUN sudo modprobe bcm2835-v4l2
+RUN modprobe bcm2835-v4l2
 
 WORKDIR /usr/src/app
 
